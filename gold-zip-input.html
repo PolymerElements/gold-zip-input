@@ -49,7 +49,8 @@ Example:
           validator="zip-validator"
           type="tel"
           maxlength="10"
-          bind-value="{{value}}">
+          bind-value="{{value}}"
+          name$="[[name]]">
 
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error id="error">[[errorMessage]]</paper-input-error>

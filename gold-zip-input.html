@@ -53,6 +53,7 @@ Example:
           type="tel"
           maxlength="10"
           bind-value="{{value}}"
+          autocomplete$="[[autocomplete]]"
           name$="[[name]]">
 
       <template is="dom-if" if="[[errorMessage]]">

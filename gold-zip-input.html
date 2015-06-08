@@ -59,7 +59,11 @@ style this element.
 
     <paper-input-container id="container"
         auto-validate="[[autoValidate]]"
-        attr-for-value="bind-value">
+        attr-for-value="bind-value"
+        disabled$="[[disabled]]"
+        no-label-float="[[noLabelFloat]]"
+        always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]"
+        invalid="[[invalid]]">
 
       <label hidden$="[[!label]]">[[label]]</label>
 
@@ -74,7 +78,14 @@ style this element.
           maxlength="10"
           bind-value="{{value}}"
           autocomplete="postal-code"
-          name$="[[name]]">
+          name$="[[name]]"
+          disabled$="[[disabled]]"
+          invalid="{{invalid}}"
+          autofocus$="[[autofocus]]"
+          inputmode$="[[inputmode]]"
+          placeholder$="[[placeholder]]"
+          readonly$="[[readonly]]"
+          size$="[[size]]">
 
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error id="error">[[errorMessage]]</paper-input-error>

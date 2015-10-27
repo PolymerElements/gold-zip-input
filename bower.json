@@ -11,9 +11,7 @@
     "gold",
     "input"
   ],
-  "main": [
-    "gold-zip-input.html"
-  ],
+  "main": "gold-zip-input.html",
   "private": true,
   "repository": {
     "type": "git",

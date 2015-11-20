@@ -5,6 +5,8 @@ before_script:
   - npm install bower
   - 'export PATH=$PWD/node_modules/.bin:$PATH'
   - bower install
+  - npm install polylint
+  - polylint
 env:
   global:
     - secure: k9eb/+G7Rxdqkf7z+2QxhxPftoQlRrqZwliFnlwCDhEUbmsylAKMYQlZVKZaP8gU8uKhqvZMhELtAY8n7G20Y3bgDKN5Jq4mv/b6frHBciD4PYBCvJAMNI1Px5nS5qnB16T+xW9cNYrYKyDmBwG/2u3DyYXu1uqXB4k4KewODNxmXVnBtpz+KFJbDhY2lpJ3jB8d0KRUCSTTL+UzsKOqmBdXEod596XqnhFU83y/3enlSQkAUfUfB4mN5RaaEGpxFbojPtL7GYqPsHvvA8XouJocJvT/bv4hNVAMf+yw1UJkZdLLEE9DUf9JSLaqnbbn9mj2eqdbGmAJCRPrvHP/Shk2MVYto77xrWUVwD4UR/H635FlK6apFoGiYB2liXqhwD43V9yyaIQDas5RQwamE4B55wrIAK8ZMwC3UXHPd3XrTrVT++AYXHLReotgkr82KE6UnzkqjQb4igNtppsnHi1XqCUsCnHhuxFynCWcMZO7L5/RDW5FGdCkwUQWv22239XUyb1Tp1ym1fKDI9erh7dRJmon0M/SXh2bJr6gzQ2/H23Zts4971xcwBzDlRABUzTSZQnndDdTOYgXelcsDhJgqqRWoMiA4j22Wr5Ikq4C/htEyK/uey9kvw7JzsIflvDxGpQhaPTAkN/BgQBTgzn4XZYW+zoNs4B6AQszgmw=

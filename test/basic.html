@@ -102,6 +102,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         assert.equal(ironInput.selectionEnd, 2, 'selectionEnd is preserved');
       });
 
+      test('null input behaves like empty string', function() {
+        var input = fixture('basic');
+        input.value = null;
+
+        assert.equal(input.value, '');
+      });
+
     });
 
     suite('a11y', function() {

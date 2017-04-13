@@ -121,7 +121,7 @@ style this element.
         ],
 
         _computeValue: function(value) {
-          value = String(value);
+          value = String((value === undefined || value === null) ? '' : value);
           var start = this.$.input.selectionStart;
           var previousCharADash = value.charAt(start - 1) === '-';
 

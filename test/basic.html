@@ -102,6 +102,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         assert.equal(ironInput.selectionEnd, 2, 'selectionEnd is preserved');
       });
 
+      test('user changes to zip fire change event', function(done) {
+        var input = fixture('basic');
+
+        input.addEventListener('change', function(event) {
+          assert.equal(event.target.value, 'a');
+          assert.equal(event.target.localName, 'gold-zip-input');
+          done();
+        });
+
+        input.value = 'a';
+        input.$.input.dispatchEvent(new Event('change'));
+      });
+
     });
 
     suite('a11y', function() {

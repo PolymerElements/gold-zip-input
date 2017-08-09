@@ -87,7 +87,7 @@ style this element.
           placeholder$="[[placeholder]]"
           readonly$="[[readonly]]"
           size$="[[size]]"
-          on-change="_onChange">
+          on-change="__onChange">
 
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error id="error">[[errorMessage]]</paper-input-error>
@@ -141,8 +141,20 @@ style this element.
             this.$.input.selectionStart = start + 1;
             this.$.input.selectionEnd = start + 1;
           }
-        }
+        },
 
+        /**
+         * Recreates a change event that's targetted against this element if it
+         *  doesn't have a shadowRoot, turns out that's handled for us if it does.
+         */
+        __onChange: function() {
+          if (!this.shadowRoot) {
+            var event = new Event('change', {
+              composed: true
+            });
+            this.dispatchEvent(event);
+          }
+        }
       })
 
     })();

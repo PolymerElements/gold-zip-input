@@ -13,11 +13,9 @@ thing! https://github.com/PolymerLabs/tedium/issues
 -->
 
 [![Build status](https://travis-ci.org/PolymerElements/gold-zip-input.svg?branch=master)](https://travis-ci.org/PolymerElements/gold-zip-input)
+[![Demo and API Docs](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/PolymerElements/gold-zip-input)
 
-_[Demo and API docs](https://elements.polymer-project.org/elements/gold-zip-input)_
-
-
-##&lt;gold-zip-input&gt;
+## &lt;gold-zip-input&gt;
 
 `gold-zip-input` is a single-line text field with Material Design styling
 for entering a US zip code.

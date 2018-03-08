@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/gold-zip-input",
+  "private": true,
+  "description": "An input field for a zip code",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/gold-zip-input.git"
+  },
+  "license": "BSD-3-Clause"
+}

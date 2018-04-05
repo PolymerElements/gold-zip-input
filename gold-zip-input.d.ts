@@ -49,6 +49,7 @@ interface GoldZipInputElement extends Polymer.Element, Polymer.PaperInputBehavio
    * The label for this input.
    */
   label: string|null|undefined;
+  value: string|null|undefined;
 
   /**
    * Returns a reference to the focusable element. Overridden from PaperInputBehavior

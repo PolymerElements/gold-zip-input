@@ -52,9 +52,9 @@ interface GoldZipInputElement extends Polymer.Element, Polymer.PaperInputBehavio
   value: string|null|undefined;
 
   /**
-   * Returns a reference to the focusable element. Overridden from PaperInputBehavior
-   * to correctly focus the native input.
-   *         
+   * Returns a reference to the focusable element. Overridden from
+   * PaperInputBehavior to correctly focus the native input.
+   *        
    */
   readonly _focusableElement: any;
   beforeRegister(): void;

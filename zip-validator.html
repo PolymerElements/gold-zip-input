@@ -12,14 +12,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../iron-validator-behavior/iron-validator-behavior.html">
 
 <script>
-
   Polymer({
 
     is: 'zip-validator',
 
-    behaviors: [
-      Polymer.IronValidatorBehavior
-    ],
+    behaviors: [Polymer.IronValidatorBehavior],
 
     validate: function(value) {
       // A valid zipcode is 5 digits or 5 digits, a dash, and 4 more digits.
@@ -28,5 +25,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
   });
-
 </script>

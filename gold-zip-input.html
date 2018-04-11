@@ -160,94 +160,86 @@ style this element.
 
   <script>
     (function() {
-      Polymer({
+    Polymer({
 
-        is: 'gold-zip-input',
+      is: 'gold-zip-input',
 
-        behaviors: [
-          Polymer.PaperInputBehavior,
-          Polymer.IronFormElementBehavior
-        ],
+      behaviors: [Polymer.PaperInputBehavior, Polymer.IronFormElementBehavior],
 
-        properties: {
-
-          /**
-           * The label for this input.
-           */
-          label: {
-            type: String,
-            value: "Zip Code"
-          },
-
-          value: {
-            // Required for the correct TypeScript type-generation
-            type: String
-          }
-
-        },
-
-        observers: [
-          '_computeValue(value)'
-        ],
-
-        beforeRegister: function() {
-          var template = Polymer.DomModule.import('gold-zip-input', 'template');
-          var version = Polymer.Element ? 'v1' : 'v0';
-          var inputTemplate = Polymer.DomModule.import('gold-zip-input', 'template#' + version);
-          var inputPlaceholder = template.content.querySelector('#template-placeholder');
-          if (inputPlaceholder) {
-            inputPlaceholder.parentNode.replaceChild(inputTemplate.content, inputPlaceholder);
-          }
-        },
+      properties: {
 
         /**
-        * Returns a reference to the focusable element. Overridden from PaperInputBehavior
-        * to correctly focus the native input.
-        */
-        get _focusableElement() {
-          return Polymer.Element ? this.inputElement._inputElement : this.inputElement;
-        },
+         * The label for this input.
+         */
+        label: {type: String, value: 'Zip Code'},
 
-        // Note: This event is only available in the 2.0 version of this element.
-        // In 1.0, the functionality of `_onIronInputReady` is done in
-        // PaperInputBehavior::attached.
-        listeners: {
-          'iron-input-ready': '_onIronInputReady'
-        },
-
-        _onIronInputReady: function() {
-          // Only validate when attached if the input already has a value.
-          if (!!this.inputElement.bindValue) {
-            this.$.container._handleValueAndAutoValidate(this.inputElement);
-          }
-        },
-
-        _computeValue: function(value) {
-          value = String(value);
-          var start = this.$.input.selectionStart;
-          var previousCharADash = value.charAt(start - 1) === '-';
-
-          // Remove any already-applied formatting.
-          value = value.replace(/-/g, '');
-
-          // Add a dash after the 5th character
-          if (value.length > 5) {
-            value = value.substr(0,5) + '-' + value.substr(5)
-          }
-          this.updateValueAndPreserveCaret(value.trim());
-
-          // If the character right before the selection is a newly inserted
-          // dash, we need to advance the selection to maintain the caret position.
-          if (!previousCharADash && value.charAt(start - 1) === '-') {
-            this.$.input.selectionStart = start + 1;
-            this.$.input.selectionEnd = start + 1;
-          }
+        value: {
+          // Required for the correct TypeScript type-generation
+          type: String
         }
 
-      })
+      },
 
+      observers: ['_computeValue(value)'],
+
+      beforeRegister: function() {
+        var template = Polymer.DomModule.import('gold-zip-input', 'template');
+        var version = Polymer.Element ? 'v1' : 'v0';
+        var inputTemplate =
+            Polymer.DomModule.import('gold-zip-input', 'template#' + version);
+        var inputPlaceholder =
+            template.content.querySelector('#template-placeholder');
+        if (inputPlaceholder) {
+          inputPlaceholder.parentNode.replaceChild(
+              inputTemplate.content, inputPlaceholder);
+        }
+      },
+
+      /**
+       * Returns a reference to the focusable element. Overridden from
+       * PaperInputBehavior to correctly focus the native input.
+       */
+      get _focusableElement() {
+        return Polymer.Element ? this.inputElement._inputElement :
+                                 this.inputElement;
+      },
+
+      // Note: This event is only available in the 2.0 version of this element.
+      // In 1.0, the functionality of `_onIronInputReady` is done in
+      // PaperInputBehavior::attached.
+      listeners: {'iron-input-ready': '_onIronInputReady'},
+
+      _onIronInputReady: function() {
+        // Only validate when attached if the input already has a value.
+        if (!!this.inputElement.bindValue) {
+          this.$.container._handleValueAndAutoValidate(this.inputElement);
+        }
+      },
+
+      _computeValue: function(value) {
+        value = String(value);
+        var start = this.$.input.selectionStart;
+        var previousCharADash = value.charAt(start - 1) === '-';
+
+        // Remove any already-applied formatting.
+        value = value.replace(/-/g, '');
+
+        // Add a dash after the 5th character
+        if (value.length > 5) {
+          value = value.substr(0, 5) + '-' + value.substr(5)
+        }
+        this.updateValueAndPreserveCaret(value.trim());
+
+        // If the character right before the selection is a newly inserted
+        // dash, we need to advance the selection to maintain the caret position.
+        if (!previousCharADash && value.charAt(start - 1) === '-') {
+          this.$.input.selectionStart = start + 1;
+          this.$.input.selectionEnd = start + 1;
+        }
+      }
+
+    })
     })();
-
   </script>
 
 </dom-module>

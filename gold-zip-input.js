@@ -163,9 +163,6 @@ Polymer({
     return this.inputElement._inputElement;
   },
 
-  // Note: This event is only available in the 2.0 version of this element.
-  // In 1.0, the functionality of `_onIronInputReady` is done in
-  // PaperInputBehavior::attached.
   listeners: {'iron-input-ready': '_onIronInputReady'},
 
   _onIronInputReady: function() {

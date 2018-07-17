@@ -1,52 +1,70 @@
 
-<!---
-
-This README is automatically generated from the comments in these files:
-gold-zip-input.html  zip-validator.html
-
-Edit those files, and our readme bot will duplicate them over here!
-Edit this file, and the bot will squash your changes :)
-
-The bot does some handling of markdown. Please file a bug if it does the wrong
-thing! https://github.com/PolymerLabs/tedium/issues
-
--->
-
+[![Published on NPM](https://img.shields.io/npm/v/@polymer/gold-zip-input.svg)](https://www.npmjs.com/package/@polymer/gold-zip-input)
 [![Build status](https://travis-ci.org/PolymerElements/gold-zip-input.svg?branch=master)](https://travis-ci.org/PolymerElements/gold-zip-input)
-[![Demo and API Docs](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/PolymerElements/gold-zip-input)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://webcomponents.org/element/@polymer/gold-zip-input)
 
 ## &lt;gold-zip-input&gt;
 
 `gold-zip-input` is a single-line text field with Material Design styling
 for entering a US zip code.
 
-```html
-<gold-zip-input></gold-zip-input>
+See: [Documentation](https://www.webcomponents.org/element/@polymer/gold-zip-input),
+  [Demo](https://www.webcomponents.org/element/@polymer/gold-zip-input/demo/demo/index.html).
+
+## Usage
+
+### Installation
+```
+npm install --save @polymer/gold-zip-input
 ```
 
-It may include an optional label, which by default is "Zip Code".
-
+### In an html file
 ```html
-<gold-zip-input label="Mailing zip code"></gold-zip-input>
+<html>
+  <head>
+    <script type="module">
+      import '@polymer/gold-zip-input/gold-zip-input.js';
+    </script>
+  </head>
+  <body>
+    <gold-zip-input auto-validate value="90210-9999"></gold-zip-input>
+  </body>
+</html>
+```
+### In a Polymer 3 element
+```js
+import {PolymerElement, html} from '@polymer/polymer';
+import '@polymer/gold-zip-input/gold-zip-input.js';
+
+class SampleElement extends PolymerElement {
+  static get template() {
+    return html`
+      <gold-zip-input auto-validate value="90210-9999"></gold-zip-input>
+    `;
+  }
+}
+customElements.define('sample-element', SampleElement);
 ```
 
-### Validation
+## Contributing
+If you want to send a PR to this element, here are
+the instructions for running the tests and demo locally:
 
-The input supports both 5 digit zip codes (90210) or the full 9 digit ones,
-separated by a dash (90210-9999).
+### Installation
+```sh
+git clone https://github.com/PolymerElements/gold-zip-input
+cd gold-zip-input
+npm install
+npm install -g polymer-cli
+```
 
-The input can be automatically validated as the user is typing by using
-the `auto-validate` and `required` attributes. For manual validation, the
-element also has a `validate()` method, which returns the validity of the
-input as well sets any appropriate error messages and styles.
+### Running the demo locally
+```sh
+polymer serve --npm
+open http://127.0.0.1:<port>/demo/
+```
 
-See `Polymer.PaperInputBehavior` for more API docs.
-
-### Styling
-
-See `Polymer.PaperInputContainer` for a list of custom properties used to
-style this element.
-
-
-
-<!-- No docs for <zip-validator> found. -->
+### Running the tests
+```sh
+polymer test --npm
+```

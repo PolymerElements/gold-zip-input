@@ -1,6 +1,11 @@
 language: node_js
 sudo: 'false'
-before_script: npm install -g polymer-cli
+before_script:
+  - npm install -g polymer-cli
+  - git checkout package-lock.json
+  - >-
+    npm run format && git diff --exit-code || (echo -e '\n\033[31mERROR:\033[0m
+    Project is not formatted. Please run "npm run format".' && false)
 env:
   global:
     - secure: qiw1eyznByzmF5SetXq4Lvzk76vBp3SMfKsivyZY2ncE09VipjBEUas5J3GKlLqeoPcwMKKrK+/vLW5guCR4pcc2Lp32+RVK8n1E0ezPktkdvVV/BMFGZyTn/LhTQizMTl5pe/t/a9tjTIX6/RLHG628qYJUiMbheJXgQ5ZQcCOqInMeZ98rBN5f2P53RVPtPBpaJ8AjJfa/PHLrxvs6NPizAn50Um/x4KYnGx8VgLOFMF2hvpluaDDBjmPZxOPAEmbAnVPcZJJYLUXw0kO5aLv1RY/lz+PwHZIpUpVWjvryKxHZTkfYuXgcjvs0v5+DFrR2A/tmLkvrHCPPlnOOVCagrOO0kdf/a10hkOPKU8QpOTfHuRO9XSPX6SU/mLxMKa5VG5OiHqyf66FQ2t1H6vn6btfXqhL/a0xZ8l5k0sA6p36/Ur3jLqsJ2RwNIyHH5Z9suVaehvC+GZLVkzmMq2tUot1TewFAoxy48d8AQ/6e7CEpq0nKjCcGFPN0B6axsOM0zcjp0nwurqrH69d9SWrMW10mHslWw8JaKV5k6V7NOine2sHQSi9qRM33taLbhyVtr6HyyGYSYlgU8xHACrD+7aKwxEbUclKisZEk79IN/Dl7/p4RNNskQ3s9QWrM2bLBoFRz3vTpaMvBGzCiLLgRlJdNYle1pIisLQZJqdQ=

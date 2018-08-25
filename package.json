@@ -21,18 +21,18 @@
   },
   "scripts": {
     "format": "webmat",
-    "generate-types": "gen-typescript-declarations --deleteExisting --outDir .",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
     "prepack": "npm run generate-types"
   },
   "version": "3.0.0-pre.22",
   "main": "gold-zip-input.js",
   "author": "The Polymer Authors",
   "dependencies": {
-    "@polymer/iron-form-element-behavior": "^3.0.0-pre.20",
-    "@polymer/iron-icon": "^3.0.0-pre.20",
-    "@polymer/iron-validator-behavior": "^3.0.0-pre.20",
-    "@polymer/paper-input": "^3.0.0-pre.20",
-    "@polymer/paper-styles": "^3.0.0-pre.20",
+    "@polymer/iron-form-element-behavior": "^3.0.0-pre.22",
+    "@polymer/iron-icon": "^3.0.0-pre.22",
+    "@polymer/iron-validator-behavior": "^3.0.0-pre.22",
+    "@polymer/paper-input": "^3.0.0-pre.22",
+    "@polymer/paper-styles": "^3.0.0-pre.22",
     "@polymer/polymer": "^3.0.0"
   }
 }
